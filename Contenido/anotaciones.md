@@ -3,9 +3,10 @@
 ### Formatos de transmision de informacion
 #### CSV (Comma Separated Values)
 
-Ejemplo:
-    Juan, Perez, Masculino, 35, Honduras
-
+Ejemplo:  
+```
+Juan, Perez, Masculino, 35, Honduras
+```
 
 #### XML:
 
@@ -98,4 +99,4 @@ Sitios web responsivos o adaptables a diferentes tamaños de pantalla (Responsiv
 
 ### Bootstrap CSS  
 ### Javascript
-LocalStorage
+### LocalStorage
