@@ -92,10 +92,10 @@ selector{
 
 Se puede saltar la prioridad utilizando `!important`
 
-#### Media Query CSS
+### Media Query CSS
 Sitios web responsivos o adaptables a diferentes tamaños de pantalla (Responsive websites).
 
 
 ### Bootstrap CSS  
-#### Javascript
+### Javascript
 LocalStorage
