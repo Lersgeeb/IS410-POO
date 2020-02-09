@@ -1,14 +1,17 @@
-Formatos de transmision de informacion
-CSV (Comma Separated Values)
+# Programacion Orientada a Objetos
+
+### Formatos de transmision de informacion
+#### CSV (Comma Separated Values)
 
 Ejemplo:
     Juan, Perez, Masculino, 35, Honduras
 
 
-XML:
+#### XML:
 
+```XML
 <persona>
-    <nombre>Juan</nombre>
+    <nombre>Juan</nombre>  
     <apellido>Perez</apellido>
     <edad>35</edad>
     <genero>Masculino</genero>
@@ -20,9 +23,11 @@ XML:
     </fecha-nacimiento>
     <direccion>Col Kennedy, bloque 1</direccion>
 </persona>
+```
 
 
-JSON (Javascript Object Notation): 
+#### JSON (Javascript Object Notation): 
+```javascript
 persona = {
     nombre:"Juan",
     apellido:"Perez",
@@ -34,61 +39,63 @@ persona = {
         anio:2012
     }
 }
+```
+
+### Servidor WEB:
+PHP  
+MySQL  
+Apache  
+
+- WAMP  -> WindowsApacheMysqlPHP
+- LAMPP -> LinuxApacheMysqlPHPPython
+- MAMP  -> MacApacheMysqlPHP
+- XAMPP -> X Sistema Operativo ApacheMysqlPHPPython
 
 
-Servidor WEB:
-PHP
-MySQL
-Apache
+#### Carpeta publica de Apache:  
+- www(WAMP)  
+- htdocs(XAMPP)  
 
-WAMP    -> WindowsApacheMysqlPHP
-LAMPP   -> LinuxApacheMysqlPHPPython
-MAMP    -> MacApacheMysqlPHP
-XAMPP   -> X Sistema Operativo ApacheMysqlPHPPython
+### CSS: Hojas de estilo en cascada  
+Es el lenguaje para definir el estilo o apariencia de las etiquetas de un documento html.  
 
+#### Formas de incluir CSS:    
+- **En linea:** Los estilos se escriben en la etiqueta que se desea modificar. Se utiliza la propiedad style y se escriben los estilos utilizando la siguiente sintaxis:  
 
-Carpeta publica de Apache:
-    www
-    htdocs
+`
+estilo1:valor1;estilo2:valor2;...;estiloN:valorN;
+`
+- **En el encabezado del documento html:** Se aplican utilizando la etiqueta style dentro de la etiqueda head.
 
+Para poder aplicar los estilos es necesario definir identificadores llamados SELECTORES los cuales pueden ser:  
+1. Nombre de la etiqueta
+2. Id de la etiqueta: Se utiliza el prefijo # (numeral)
+3. Una clase de estilos: Se utiliza el prefijo . (punto)
 
-CSS: Hojas de estilo en cascada
-Es el lenguaje para definir el estilo o apariencia de las etiquetas de un documento html.
-Formas de incluir CSS:
-*En linea: Los estilos se escriben en la etiqueta que se desea modificar. Se utiliza la propiedad style y se escriben los estilos utilizando la siguiente sintaxis:
-    estilo1:valor1;estilo2:valor2;...;estiloN:valorN;
-
-*En el encabezado del documento html:
-    Se aplican utilizando la etiqueta style dentro de la etiqueda head.
-    Para poder aplicar los estilos es necesario definir identificadores llamados SELECTORES los cuales pueden ser:
-    -Nombre de la etiqueta
-    -Id de la etiqueta: Se utiliza el prefijo # (numeral)
-    -Una clase de estilos: Se utiliza el prefijo . (punto)
-
-    La sintaxis para definir selectores es la siguiente:
-    selector{
+La sintaxis para definir selectores es la siguiente:
+```
+selector{
         estilo1:valor1;
         estilo2:valor2;
         ...;
         estiloN:valorN;
-    }
-*En archivos externos:
-    Se crean archivos planos con la extension .css 
-    Se incluyen a un documento html utilizando la etiqueta link dentro de la etiqueta head.
+}
+```
+- **En archivos externos:** Se crean archivos planos con la extension .css y luego se incluyen a un documento html utilizando la etiqueta link dentro de la etiqueta head.  
 
 
-Prioridades estilos:
+#### Prioridades estilos:
 1. Estilos en linea
 2. Estilos por ID
 3. Estilos por clase css
 4. Estilos por etiqueta
 
-Se puede saltar la prioridad utilizando !important
+Se puede saltar la prioridad utilizando `!important`
+
+#### Media Query CSS
+Sitios web responsivos o adaptables a diferentes tamaños de pantalla (Responsive websites).
 
 
-Media Query CSS -> Sitios web responsivos o adaptables a diferentes tamaños de pantalla (Responsive websites).
-
-
-Bootstrap CSS
-Javascript
+### Bootstrap CSS  
+#### Javascript
 LocalStorage
