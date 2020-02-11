@@ -1,0 +1,140 @@
+body{
+    /*global variable*/
+    --background-color: gainsboro;
+    --border-size: 2px;
+    --accent-color: #0af;
+
+    /*Border-Pop*/
+    --alpha1: -4;
+    --alpha2: -2;
+}
+
+.container{
+    margin-top: 100px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    position: relative;
+    background-color: var(--background-color);   
+    margin: 10px;
+    border-radius: 0px;
+    border: 0;
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+
+ /*Border-Pop*/
+.btn-border-pop:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: -1;
+    border: var(--border-size) solid var(--background-color);
+    transition: top,left,right,bottom,150ms ease-in-out;
+}
+.btn-border-pop:hover:before{
+    top: calc(var(--border-size) * var(--alpha1) );
+    left: calc(var(--border-size) * var(--alpha1) );
+    right: calc(var(--border-size) * var(--alpha1) );
+    bottom: calc(var(--border-size) * var(--alpha1) );
+}
+.btn-border-pop:focus:before{
+    top: calc(var(--border-size) * var(--alpha2) );
+    left: calc(var(--border-size) * var(--alpha2) );
+    right: calc(var(--border-size) * var(--alpha2) );
+    bottom: calc(var(--border-size) * var(--alpha2) );
+}
+
+/*Background-slide*/
+.btn-background-slide{
+    z-index: 1; /*to make text put over the "before element" */
+
+    transition: color 300ms ease-in-out;
+}
+.btn-background-slide:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    z-index: -1;
+    background-color: var(--accent-color) ;
+
+    transform:scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+}
+.btn-background-slide:hover:before,
+.btn-background-slide:focus:before{
+    transform:scaleX(1);
+}
+
+.btn-background-slide:hover,
+.btn-background-slide:focus{
+    color: white
+}
+
+/*Background-circle*/
+.btn-circle:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    z-index: -1;
+    background-color: var(--background-color) ;
+    border-radius: 50%;
+
+    transform: scale(1.5); /*The circle is bigger than the square button*/
+    transition: transform 500ms ease-in-out;
+}
+
+.btn-circle{
+    z-index: 1;
+    overflow: hidden;
+    background-color: var(--accent-color);
+    transition: color 500ms ease-in-out;
+}
+
+.btn-circle:hover:before,
+.btn-circle:focus:before{
+    transform: scale(0);
+}
+
+.btn-circle:hover,
+.btn-circle:focus{
+    color: white
+}
+
+/*Underline*/
+.btn-underline:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    
+    background-color: var(--accent-color) ;
+    transform: scaleX(0);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn-underline:hover:before,
+.btn-underline:focus:before{
+    transform: scaleX(1);
+    transform-origin: center;
+}
