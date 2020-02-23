@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="market">
+        <h1>Market</h1>
+        <div class="input-comp">
+            <label for="name">Nombre de producto</label><input type="text" id="name">
+        </div>
+        <div class="input-comp">
+            <label for="quant">cantidad</label><input type="number" id="quant">
+        </div>
+        <div class="input-comp">
+            <label for="price">Precio</label><input type="number" id="price">
+        </div>
+        <Button onclick="addItem()">Agregar</Button>
+    </div>
+
+    <div class="bill">
+        <h1>Factura</h1>
+        <table border="1">
+            <thead>
+                <th>Nombre</th>
+                <th>cantidad</th>
+                <th>Precio</th>
+                <th>total</th>
+                <th>funcion</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name">Manzana</td>
+                    <td class="quant">
+                        <span>8</span> 
+                        <button onclick="changeQuantUnit(this, -1)">-</button>
+                        <button onclick="changeQuantUnit(this, 1)">+</button>
+                    </td>
+                    <td class="price">5</td>
+                    <td class="total" >40</td>
+                    <td><button onclick="removeItem(this)">remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+     
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
