@@ -1,7 +1,7 @@
 function removeItem(e){
     parent = e.parentNode.parentNode;
     parent.remove();
-    console.log(parent);
+    updateAmount();
 }
 
 function addItem(){
@@ -15,6 +15,7 @@ function addItem(){
         name.value = "";
         quant.value = "";
         price.value = "";
+        updateAmount();
     }    
 }
 
@@ -32,7 +33,7 @@ function createItem(name,quant,price){
                         <td><button onclick="removeItem(this)">remove</button></td>`
 
     var table_body = document.getElementsByTagName('tbody')[0];
-    var newRow = table_body.insertRow(table_body.rows.length);
+    var newRow = table_body.insertRow(-1);
     newRow.innerHTML = trContent;
 }
 
@@ -44,6 +45,18 @@ function changeQuantUnit(e,unit){
     
     price = row.getElementsByClassName("price")[0].innerHTML;
     row.getElementsByClassName("total")[0].innerHTML = price * parseInt(quantSpan.innerHTML);
+    updateAmount();
 }
 
 
+function updateAmount(){
+    var tbody = document.getElementsByTagName("tbody")[0];
+    var totals = tbody.getElementsByClassName("total");
+    sum = 0;
+    for(total of totals){
+        sum += parseInt(total.innerHTML);
+    }
+    
+    document.getElementsByTagName("tfoot")[0].getElementsByClassName("amount")[0].innerHTML = sum;
+    
+}
