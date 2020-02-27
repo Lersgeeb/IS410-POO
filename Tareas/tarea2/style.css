@@ -1,0 +1,98 @@
+body,html{
+    margin: 0;
+    color: white;
+    background-color: #E1E4EF;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.bg-dark {
+    background-color: #3B5998!important;
+}
+
+.btn-primary{
+    background-color: #4267b2;
+    border-color: #29487d;
+    border-radius: 0;
+}
+
+.btn-primary:hover{
+    background-color: #1b366b;
+    border-color: #29487d;
+    border-radius: 0;
+}
+
+.navbar{
+    padding-left:50px;
+    padding-right:150px;
+}
+
+/*------------------------------------------------*/
+.container{
+    padding:100px 100px
+}
+
+.input{
+    padding: 1em;
+}
+
+.col{
+    box-sizing: border-box;
+    
+}
+
+.card{
+    color: #333333;
+    margin-top:30px;
+    min-width: 20rem ;
+}
+
+select{
+   
+}
+
+.form-control{
+    color: #757575;
+}
+
+
+textarea {
+
+    width: 100%;
+    height: 80px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: .25rem;
+    border: 1px solid #ced4da
+  }
+
+  input[type=date]{
+    color:#757575;
+    
+  }
+
+  .btn-primary{
+    background-color: #4269b1;
+}
+
+
+.card img{
+    width: 50px;
+    height: 50px;
+    /*img-thumbnail*/
+}
+
+.profile{
+    
+    margin: 10px 15px 0px 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ced4da;
+}
+
+
+
+@media only screen and (max-width:768px){
+    .container{
+        padding:30px 30px;
+    }
+}
