@@ -1,0 +1,84 @@
+body,html{
+    margin: 0;
+    color: white;
+    background-color: rgb(247, 247, 247);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.bg-dark {
+    background-color: white!important;
+}
+
+.btn-primary{
+    color: #b3b3b3;
+    background-color: rgb(247, 247, 247);
+    border-color: rgb(247, 247, 247);
+    border-radius: 0;
+}
+
+.btn-primary:hover{
+    background-color: rgb(201, 201, 201);
+    border-color: rgb(175, 175, 175);
+    border-radius: 0;
+}
+
+.navbar{
+    padding-left:50px;
+    padding-right:150px;
+}
+
+/*---------------------------*/
+.container-fluid{
+   
+    margin-top: 50px !important;
+    
+}
+.row{
+    margin:10px;
+}
+
+
+.card{
+    color: #333333;
+    margin-top: 30px;
+}
+
+.col{
+    padding: 10px ;
+}
+
+/*------------------------------------------------IMG---------------------------------------*/
+.imageVideo1{
+    background-size: cover;
+    background-position: center;
+    min-height:150px;
+}
+
+.imageVideo1{
+    color: white;
+    padding: 20px 10px;
+    
+
+}
+
+.title{
+    overflow: hidden;
+}
+.title small{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: nowrap;
+    
+}
+
+.imageVideo1 .durVideo{
+    border-radius: 6px;
+    margin-left: 10px;
+    background-color: rgba(0, 0, 0, 0.459);
+    text-align: center;
+    width: 40px;
+}
+
+/*------------------------------------------------------------------------------------*/
