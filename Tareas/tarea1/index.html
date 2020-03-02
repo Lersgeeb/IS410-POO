@@ -29,7 +29,9 @@
             
         </div>
     </div>
-    <div class="container">
+
+
+    <div class="container newVideoForm">
       <form id="uploadVideo" action="">
         <div class="form-group">
           <input type="text" class="form-control" id="videoTitle" placeholder="Titulo">
@@ -38,9 +40,8 @@
           <input type="text" class="form-control" id="videoUrl"  placeholder="Url caratula">
         </div>
 
-        <button type="submit" class="btn btn-primary">Únete</button>
         <div class="form-group">
-            <select class="form-control" id="userName" onchange="renderPosts()">
+            <select class="form-control" id="userName">
                <option value="${user}">${user}</option>
             </select>
         </div>
@@ -53,7 +54,7 @@
         <div class="form-group">
           <input type="text" class="form-control" id="videoAge" placeholder="Subido hace X horas">
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button onclick="createVideo()" class="btn btn-primary">Guardar</button>
     </div>
     
 

@@ -2,7 +2,13 @@ var canales=[
     { canal:"Fuera JOH", 
     descripcion:"Canal de videos de marchas"}, 
     {canal:"Anime Cool", 
-    descripcion:"Canal de videos de animes coooool" }
+    descripcion:"Canal de videos de animes coooool" },
+    {canal:"UnSun", 
+    descripcion:"Canal de Musica" },
+    {canal:"Queen", 
+    descripcion:"Canal de Musica" },
+    {canal:"PlusMovie", 
+    descripcion:"Canal de Criticas de peliculas" }
 ]
 
 var videos = [
@@ -66,8 +72,9 @@ var videos = [
 
 
 
-function RenderPosts(){
+function renderPosts(){
     postContainer = document.getElementById("postContainer");
+    postContainer.innerHTML = "";
     for(video of videos){
         postContainer.innerHTML += `<div class="col col-12 col-sm-4 col-md-3 col-lg-2">
                                         <div class="card ">
@@ -88,12 +95,66 @@ function RenderPosts(){
 }
 
 
-
 function render(){
+
+    renderPosts();
+
     uploadVideo = document.getElementById("uploadVideo");
-uploadVideo.innerHTML =   ` `;
+    options = [];
+    for(canalDesc of canales){
+        options.push(`<option value="${canalDesc.canal}">${canalDesc.canal}</option>`)
+    }
+
+    uploadVideo.innerHTML =  `  <div class="form-group">
+                                    <input type="text" class="form-control" id="videoTitle" placeholder="Titulo">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="videoUrl"  placeholder="Url caratula">
+                                </div>
+
+                                <div class="form-group">
+                                    <select class="form-control" id="userName">
+                                        ${options.join("")}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="videoViews" placeholder="Visualizaciones">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="videoDuration" placeholder="Duracion HH:MM">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="videoAge" placeholder="Subido hace X horas">
+                                </div>
+                                <a onclick="createVideo()" class="btn btn-primary" >Guardar</a>`;    
 }
 
-RenderPosts();
+
+function createVideo(){
+    var title = document.getElementById("videoTitle");
+    var url = document.getElementById("videoUrl");
+    var userName = document.getElementById("userName");
+    var views = document.getElementById("videoViews");
+    var duration = document.getElementById("videoDuration");
+    var videoAge = document.getElementById("videoAge");
+
+
+    if(title.value && url.value && userName.value && views.value && duration.value && videoAge.value){
+        videos.push({
+            titulo:`${title.value}`,
+            urlCaratula:url.value, 
+            canal:userName.value, 
+            visualizaciones:views.value,
+            duracion:duration.value,
+            subido:videoAge.value
+        })
+        renderPosts();
+        console.log(videos)
+    }
+    
+}
+
+
+render()
 
 

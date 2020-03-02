@@ -38,6 +38,9 @@ body,html{
     margin:10px;
 }
 
+#postContainer{
+    border-bottom: 1px solid #b3b3b3;
+}
 
 .card{
     color: #333333;
@@ -82,3 +85,24 @@ body,html{
 }
 
 /*------------------------------------------------------------------------------------*/
+
+.newVideoForm{
+    background-color: rgb(235, 235, 235);
+    padding: 30px 20px;
+    border-radius: 6px;
+    border:1px solid #b3b3b3;
+    width: 25%;
+}
+
+#uploadVideo .btn-primary{
+    background-color: rgb(223, 11, 7);
+    color: white;
+    border-radius: 6px;
+}
+
+@media only screen and (max-width: 700px){   
+    .newVideoForm{
+        width: 80%;
+        
+    }
+}
