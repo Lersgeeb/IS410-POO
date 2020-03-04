@@ -1,0 +1,58 @@
+body,html{
+    margin: 0;
+    color: white;
+    background-color: rgb(247, 247, 247);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.bg-dark {
+    background-color: black!important;
+}
+
+.btn-primary{
+    color: white;
+    background-color: rgb(150, 150, 150);
+    border-color: rgb(121, 121, 121);
+    border-radius: 0;
+}
+
+.btn-primary:hover{
+    background-color: rgb(201, 201, 201);
+    border-color: rgb(109, 109, 109);
+    border-radius: 0;
+}
+
+.navbar{
+    padding: 0px 0px;
+    padding-left:50px;
+    padding-right:150px;
+    margin-bottom:  30px;
+}
+/*-----------------------------------------------CARDS-----------------------------------------------*/
+
+.container-fluid{
+    padding: 10px 250px;
+}
+
+.card{
+    background-color: black;
+    border-radius: 0;
+}
+
+.col{
+    padding: 10px ;
+}
+
+.newsSection h1{
+    color: black;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+.breakingNews{
+    background-color: rgba(255, 0, 0, 0.404);
+    width: 100px;
+    margin: 10px 10px;
+    text-align: center;
+    border-radius: 6px;
+}
