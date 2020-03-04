@@ -1,50 +1,61 @@
-var posts = [
-    {usuario:"Juan Perez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2012-12-12"},
-    {usuario:"Juan Perez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2012-12-12"},
-    {usuario:"Juan Perez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2012-12-12"},
-    {usuario:"Juan Perez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2012-12-12"},
-    {usuario:"Omar Lopez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2018-02-25"},
-    {usuario:"Omar Lopez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2018-02-25"},
-    {usuario:"Omar Lopez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2018-02-25"},
-    {usuario:"Omar Lopez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2018-02-25"},
-    {usuario:"Omar Lopez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2018-02-25"},
-    {usuario:"Omar Lopez",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2018-02-25"},
-    {usuario:"Sandra Castillo",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2020-01-12"},
-    {usuario:"Sandra Castillo",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2020-01-12"},
-    {usuario:"Sandra Castillo",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2020-01-12"},
-    {usuario:"Sandra Castillo",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2020-01-12"},
-    {usuario:"Sandra Castillo",
-    post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
-    fecha:"2020-01-12"},
-];
+localStorage = window.localStorage;
+if( localStorage.getItem("posts")==null ){
+    var posts = [
+        {usuario:"Juan Perez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2012-12-12"},
+        {usuario:"Juan Perez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2012-12-12"},
+        {usuario:"Juan Perez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2012-12-12"},
+        {usuario:"Juan Perez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2012-12-12"},
+        {usuario:"Omar Lopez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2018-02-25"},
+        {usuario:"Omar Lopez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2018-02-25"},
+        {usuario:"Omar Lopez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2018-02-25"},
+        {usuario:"Omar Lopez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2018-02-25"},
+        {usuario:"Omar Lopez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2018-02-25"},
+        {usuario:"Omar Lopez",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2018-02-25"},
+        {usuario:"Sandra Castillo",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2020-01-12"},
+        {usuario:"Sandra Castillo",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2020-01-12"},
+        {usuario:"Sandra Castillo",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2020-01-12"},
+        {usuario:"Sandra Castillo",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2020-01-12"},
+        {usuario:"Sandra Castillo",
+        post:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nemo id beatae fugit rem. Beatae dignissimos aut perferendis ipsa. Voluptate reprehenderit animi aliquam blanditiis, vero id repudiandae corporis ratione.",
+        fecha:"2020-01-12"},
+    ];
+    localStorage.setItem("posts",JSON.stringify(posts))
+    console.log("escribiendo datos al storage")
+}
+else{
+    posts = JSON.parse(localStorage.getItem("posts"))
+    console.log("Leyendo datos del storage")
+}
+
+
 
 
 var calendarMonths = [
@@ -75,6 +86,7 @@ function createPost(){
             post:postContent.value,
             fecha:datePost.value
         });
+        localStorage.setItem("posts",JSON.stringify(posts))
 
         renderPosts();
 
