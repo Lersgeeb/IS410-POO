@@ -50,9 +50,52 @@ body,html{
 }
 
 .breakingNews{
-    background-color: rgba(255, 0, 0, 0.404);
+    background-color: rgba(255, 0, 0, 0.705);
     width: 100px;
     margin: 10px 10px;
     text-align: center;
     border-radius: 6px;
+}
+
+.card-title{
+    color: rgb(185, 185, 185);
+}
+
+.card-text{
+    color: rgb(150, 150, 150);
+    font-size: 0.8em;
+}
+
+.likeAndCommentDiv{
+    font-size: 0.8em;
+    color: rgb(150, 150, 150);
+}
+
+.newsFuncButton{
+    font-size: 0.8em;
+    color: rgb(150, 150, 150);
+}
+
+.show{
+    display: inline !important;
+}
+
+.hide{
+    display: none;
+}
+
+.newsFuncButton button{
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.newsFuncButton button:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+.newsFuncButton button:focus {
+    outline: none;
 }
