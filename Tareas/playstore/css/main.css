@@ -1,0 +1,95 @@
+body {
+    padding-top: 5rem;
+    background-color: rgb(235, 235, 235);
+}
+
+.navbar-brand img{
+    height: 30px;
+}
+
+.card{
+    margin-top: 1em;
+}
+
+.fa-star{
+    font-size: 0.7em;
+}
+
+.card:hover{
+    background-color: #689F38;
+    color: white;
+    cursor: pointer;
+}
+
+
+.modalContainer{
+    padding: 1em;
+}
+
+.headerApp{
+    border-bottom:1px solid rgb(235, 235, 235) ;
+    width: 100%;
+    
+    display: flex;
+}
+
+.descApp{
+    padding-left:  2em;
+}
+
+.descApp small{
+    color: gray;
+}
+
+.modalImg{
+    height: 7em;
+}
+.modalstars{
+    text-align: center;
+    color:#689F38;
+    
+    border-bottom:1px solid rgb(235, 235, 235) ;
+}
+
+.modalstars .fa-star{
+    margin: 1em 0em;
+    font-size: 0.9em;
+}
+
+.carousel{
+    padding: 2em 0em;
+    border-bottom:1px solid rgb(235, 235, 235) ;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    border-bottom:1px solid rgb(235, 235, 235) ;
+    padding: 1em 0em;
+}
+.comment img{
+    height: 2.8em;
+}
+.comment p{
+    margin: 0;
+    color: gray;
+    font-size: 0.8em;
+}
+.userInfo{
+    padding-left:  1em;
+}
+
+.modal-content .btn-primary{
+  background-color: #689F38;  
+  border: 0; 
+}
+
+.modal-content .btn-primary:hover{
+  background-color: rgb(85, 131, 45) !important;  
+  border: 0; 
+}
+
+.modal-content .btn-primary:active{
+    background-color: #689F38 !important;  
+    box-shadow: none !important;
+}
