@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lugo</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/all.css"><!--FontAwesome-->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+
+        <a class="navbar-brand" href="#">Iugo</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0">
+
+                <div class="form-group">
+                    <select class="form-control  px-5 py-0 my-2" name="user" id="userSel" onchange="renderGreeting()">
+                        
+                    </select>
+                </div>
+                
+                <div class="form-group ml-3">
+                    <button class="btn btn-primary px-5 py-1"  onclick="showOrders()">Ver ordenes</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </nav>
+        
+    <main role="main" class="container mt-4">
+    
+    <div class="row">
+        <div class="col-12">
+            <div id="titleGreeting"></div> 
+            <h4 class="QGreeting">¿Que necesitas?</h4>
+        </div>
+    </div>
+
+    <div class="row mt-5" id="categoriesDiv">
+
+    </div>
+
+    </main><!-- /.container -->
+
+
+        
+    <!-- ModalOrder -->
+    <div class="modal fade" id="ordersModal" tabindex="-1" role="dialog" aria-labelledby="ordersModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal-header-order">
+                <h5 class="modal-title orderModalTitle" id="ordersModalLabel"></h5>
+            </div>
+            <div class="modal-body modal-body-order">
+                <div class="container" id="productsUser">
+
+                </div>
+            </div>
+
+            <div class="modal-footer modal-footer-order">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+              
+    <!-- ModalBusiness -->
+    <div class="modal fade bd-example-modal-lg" id="businessModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+                <div class="modal-header modal-header-order">
+                    <h5 class="modal-title orderModalTitle" id="businessModalLabel"></h5>
+                </div>
+                
+                <div class="modal-body modal-body-order">
+                    <div class="row" id="businessview">
+
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- ModalNewProduct -->
+    <div class="modal fade bd-example-modal-sm" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content" id="newProductQuant">
+            
+          </div>
+        </div>
+      </div>
+
+    <div class="container p-5 mt-5">
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="nameCat" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="IconCat" placeholder="IconCat">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="businessCat" placeholder="businessCat">
+        </div>
+        <button onclick="createCategorie()" class="btn btn-primary createButton">crear</button>  
+        <small>Caracteristica no funcional</small>  
+    </div>
+    
+   
+              
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controlador.js"></script>
+</body>
+</html>
+

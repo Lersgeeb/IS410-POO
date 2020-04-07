@@ -1,0 +1,199 @@
+body {
+    padding-top: 5rem;
+    --principal: rgb(94, 65, 138);
+    --darkPrincipal: rgb(75, 54, 110);
+    --darkerPrincipal: rgb(61, 43, 90);
+}
+
+/*-------------------------------Navbar-------------------------------*/
+
+.navbar{
+    background-color: var(--principal);
+}
+
+.navbar-brand{
+    font-weight: 800;
+    font-size: 2.5em;
+    margin-left: 2em;
+}
+
+.form-group .btn-primary{
+    background-color: var(--darkPrincipal);
+    border: 1px solid var(--darkPrincipal);
+    border-radius: 20px;
+}
+
+#userSel{
+    color:var(--principal);
+    border-radius: 20px;
+    border:none;
+    font-weight: 500;
+}
+
+/*-------------------------------greeting-------------------------------*/
+
+#titleGreeting h1{
+    font-weight: 900;
+    color: var(--principal);
+}
+
+.QGreeting{
+    color: var(--principal);
+    font-size: 2em;
+    font-weight: 400;
+}
+
+/*-------------------------------Categories-------------------------------*/
+
+.products {
+    padding: 0rem 1.5rem;
+    border-radius: 10px;
+    color: white;
+}
+
+.iconCategory{
+    font-size: 4em;
+}
+
+.nameCategory{
+    font-weight: 700;
+}
+/*-------------------------------footer-------------------------------*/
+
+.footerBar{
+    height: 7em;
+    background-color: var(--darkerPrincipal);
+    margin-top: auto;
+}
+
+
+/*-------------------------------ModalOrder-------------------------------*/
+.modal-header-order{
+    background-color: var(--principal);
+    color:white;
+    border-radius: 0; 
+
+}
+
+.orderModalTitle{
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+.modal-body-order{
+    padding: 1.5em 3em;
+}
+
+.modal-body .container{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.product{
+    
+    border-bottom: 1px solid rgb(224, 224, 224);;
+}
+
+.productDetailed h5{
+    color: var(--principal);
+}
+
+.productDetailed p{
+    color: gray;
+    font-size: 0.9em;
+    
+}
+
+
+.productPrice{
+    text-align: end;
+    color: rgb(100, 100, 100);
+    
+    font-weight: 500;
+}
+
+.modal-footer-order{
+    border-top: none;
+}
+
+.modal-footer-order .btn-secondary{
+    background-color: var(--principal);
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+/*--------------------Modal Business------------------*/
+.containerBusiness{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 0px 0px 8px 8px;
+    padding: 1em;
+}
+
+.imgBusiness{
+    background-position: center;
+    background-size: cover;
+    height:12em;
+    border-radius: 8px 8px 0px 0px;
+    position: relative;
+    color: white;
+}
+
+.titleImg{
+    text-shadow: 1px 1px gray;
+    position: absolute;
+    font-weight: bold;
+    bottom: 0.3em;
+    padding-left: 0.7em;
+    
+}
+
+.productName{
+    display: flex;
+    margin-top: 1em;
+    justify-content: space-between;
+}
+
+.productName button{
+    background-color: var(--principal);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8em;
+    padding: 0.2em 1.5em;
+    border: none;
+}
+
+.businessCard{
+    margin-top: 1em;
+}
+
+/**/
+
+.modal-body-newProduct h3{
+    color: var(--principal);
+    
+}
+.modal-body-newProduct h5{
+    color: gray;
+    text-align: end;
+    
+}
+
+.modal-body-newProduct p, .modal-body-newProduct label{
+    color: gray;
+}
+
+.modal-body-newProduct input{
+    border-radius: 8px;
+    border: 1px solid gray;
+
+}
+
+.modal-footer-newProduct button{
+    background-color: var(--principal);
+}
+
+.createButton{
+    background-color: var(--darkPrincipal);
+    border: none;
+}
