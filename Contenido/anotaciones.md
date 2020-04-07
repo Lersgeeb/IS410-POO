@@ -100,3 +100,33 @@ Sitios web responsivos o adaptables a diferentes tamaños de pantalla (Responsiv
 ### Bootstrap CSS  
 ### Javascript
 ### LocalStorage
+
+
+## Segundo Parcial
+### Peticiones hacia el servidor:
+
+- **Peticiones Sincronas:** Son las peticiones en las cuales el cliente hace la petición y tiene que esperar a que el servidor termine de procesar para continuar. La forma básica de peticiones sincronas se hace mediante formularios, estos deben cumplir con los siguientes requisitos:
+    1. Incluir la etiqueta form con las propiedades action y method. En action indicar el recurso del lado del servidor que recibirá y procesará la información. En method, se indica el método de envio de información que pueden ser: GET, POST, PUT, DELETE, ....
+    2. Los componentes del formulario (input, select, textarea) deben tener el atributo name.
+    3. El boton de acción que se encargará de realizar la petición, es decir enviar la información debe ser del tipo submit.
+
+
+
+- **Peticiones Asincronas:**
+
+
+
+### Metodos de envio de información:
+1. GET: Envia la información a traves de la URL en formato URLEncoded
+    Sintaxis: URL?nombre1=valor1&nombre2=valor2&...&nombreN=valorN
+2. POST: Empaqueta la información y la envia al recurso indicado pero no visible (No se ve en la URL)
+    
+
+**Sincrono**: Una instruccion se ejecuta hasta que la anterior finaliza
+
+```javascript
+int a = 5;
+int b = 10;
+int suma = a+b;
+System.out.println(suma);
+```
