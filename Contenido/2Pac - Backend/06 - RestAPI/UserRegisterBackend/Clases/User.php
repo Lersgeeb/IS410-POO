@@ -88,9 +88,58 @@
 
         public function __toString(){
             return $this->name ." ".$this->lastname.
-            " (".$this->birthday.",".$this->country.")";
+            " (".$this->birthday.", ".$this->country.")";
         }
-    }
 
+        public function saveUser(){
+            $content = file_get_contents("../data/users.json");
+            $users = json_decode($content,true);
+            $users[] =  array(
+                "name"=> $this->name,
+                "lastname"=> $this->lastname,
+                "birthday"=> $this->birthday,
+                "country"=> $this->country 
+            );
 
+            $file = fopen("../data/users.json","w");
+            fwrite($file, json_encode($users));
+            fclose($file);
+        }
+
+        public static function getUsers(){
+                $content = file_get_contents("../data/users.json");
+                echo $content;
+        }
+
+        public static function getUser($index){
+                $content = file_get_contents("../data/users.json");
+                $users = json_decode($content,true);
+                echo json_encode($users[$index]);
+        }
+
+        public  function updateUser($index){
+                $content = file_get_contents("../data/users.json");
+                $users = json_decode($content,true);
+                $user =  array(
+                        "name"=> $this->name,
+                        "lastname"=> $this->lastname,
+                        "birthday"=> $this->birthday,
+                        "country"=> $this->country 
+                );
+                $users[$index] = $user;
+                $file = fopen("../data/users.json","w");
+                fwrite($file, json_encode($users));
+                fclose($file);
+        }
+
+        public static function removeUser($index){
+                $content = file_get_contents("../data/users.json");
+                $users = json_decode($content,true);
+                array_splice($users, $index, 1);
+                $file = fopen("../data/users.json","w");
+                fwrite($file, json_encode($users));
+                fclose($file);
+        }
+
+}
 ?>
