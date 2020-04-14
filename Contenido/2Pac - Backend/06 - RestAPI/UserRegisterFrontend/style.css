@@ -1,0 +1,98 @@
+body, html{
+    background-color: #202020;
+    font-family: Open Sans;
+}
+
+.bodyForm{
+    display:flex;
+    justify-content: space-around;
+    height: 100vh;
+    align-items: center;
+}
+
+.fromDiv{
+    display: inline-block;
+    padding: 2em;
+    border: 2px solid white;
+    color: white;
+    width: 25%;
+    border-radius: 5px;
+    
+}
+
+.title{
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em 0;
+}
+
+.formGroup input{
+    background-color: transparent;
+    border: 1px solid white;
+    height: 1.5em;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding-left: 1em;
+    border-radius: 5px;
+}
+
+.formGroup select{
+    background-color: transparent;
+    border: 1px solid white;
+    height: 1.5em;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding-left: 1em;
+    border-radius: 5px;
+}
+
+.formGroup label{ 
+    height: 1.5em;
+    color: white;
+    font-size: 1.5em;
+}
+.formGroup option{
+    background-color: transparent;
+    color: #202020;
+}
+
+.formGroup button{
+    margin-top: 2em;
+    height: 2em;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.formGroup button:hover{
+    color: #202020;
+    background-color: white;
+}
+
+.formGroup button:disabled{
+  
+    background-color: gray;
+    border: 2px solid white;
+    color: #202020;
+   
+}
+.tableDiv{
+    background-color: transparent;
+}
+
+.table{
+    color: white;
+}
