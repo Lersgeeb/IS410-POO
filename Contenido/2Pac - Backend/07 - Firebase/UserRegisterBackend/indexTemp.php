@@ -11,13 +11,15 @@ $factory = (new Factory)
 
 $database = $factory->createDatabase();
 
-$newPost = $database
+/*$newPost = $database
     ->getReference('users')
     ->push([
         'firstName'=>'Juan',
         'lastName'=>'Perez',
         'birthDate'=>'12/12/2012',
         'country'=>'Honduras'
-    ]);
+    ]);*/
+
+    $snapshot = $database->getReference('users')->getSnapshot();
 
 ?>
