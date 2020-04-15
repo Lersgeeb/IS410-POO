@@ -1,0 +1,13 @@
+{
+    "name": "gabriel/firebase",
+    "description": "Conexion firebase con PHP",
+    "authors": [
+        {
+            "name": "Lersgeeb",
+            "email": "bangeas.gabriel13@gmail.com"
+        }
+    ],
+    "require": {
+        "kreait/firebase-php": "^5.1"
+    }
+}
