@@ -17,7 +17,10 @@
                 echo Post::getPostbyId($_GET['id']);
             }
             else if(isset($_GET['codigoUsuario'])){ //?id=#
-                echo Post::getPostsbyUserId($_GET['codigoUsuario']);
+                if( isset($_GET['profile']) )
+                    echo Post::getPostsbyUserId($_GET['codigoUsuario']);
+                else
+                    echo Post::getPostsbyFollowUsers($_GET['codigoUsuario']);
             }
             else if(isset($_GET['index'])){ //?id=#
                 echo Post::getPostbyIndex($_GET['index']);

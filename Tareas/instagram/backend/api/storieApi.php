@@ -14,13 +14,13 @@
 
         case 'GET': //Obtener
             if (isset($_GET['id'])){ //?id=#
-                echo Storie::getStoriebyId($_GET['id']);
+                echo Story::getStorybyId($_GET['id']);
             }
-            else if(isset($_GET['usuario'])){ //?id=#
-                echo Storie::getStoriesbyUser($_GET['usuario']);
+            else if(isset($_GET['codigoUsuario'])){ //?id=#
+                echo Story::getStoriesbyFollowUsers($_GET['codigoUsuario']);
             }
             else if(isset($_GET['index'])){ //?id=#
-                echo Storie::getStoriebyIndex($_GET['index']);
+                echo Story::getStorybyIndex($_GET['index']);
             }
         break;
 

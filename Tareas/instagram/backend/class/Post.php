@@ -1,4 +1,8 @@
 <?php
+
+include_once __DIR__ . "/User.php";
+include_once __DIR__ . "/Comment.php";
+
     class Post{
 
         private $codigoPost;
@@ -155,4 +159,34 @@
 
                 return json_encode($postUser);
         }
-    }
+
+        public static function getPostsbyFollowUsers($id){
+                 
+                $user = json_decode( User::getUser($id), true ); 
+                $following = $user["siguiendo"];
+                
+                
+                $totalPosts = [];
+
+                foreach ($following as $followUserId){
+                        $posts = json_decode(  Post::getPostsbyUserId($followUserId), true );
+
+                        foreach ($posts as $post){
+                                
+                                $postOfUser = json_decode( User::getUser($post["codigoUsuario"]), true );
+                                unset($postOfUser["contrasena"]); 
+                                unset($postOfUser["siguiendo"]); 
+                                unset($postOfUser["correo"]); 
+
+                                $post["user"] = $postOfUser;
+
+                                $commentPost = json_decode( Comment::getcommentsByPostId($post["codigoPost"]), true );
+                                $post["comments"] = $commentPost;
+
+                                $totalPosts[] = $post;
+                        }
+                }
+
+                return json_encode($totalPosts);
+        }
+    } 

@@ -30,5 +30,6 @@
 {"codigoUsuario":22,"nombre":"Oolong","correo":"oolong@gmail.com","contrasena":"asd.456","imagen":"img/profile-pics/oolong.jpg","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
 {"codigoUsuario":23,"nombre":"Pan","correo":"pan@gmail.com","contrasena":"asd.456","imagen":"img/profile-pics/pan.png","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
 {"codigoUsuario":24,"nombre":"Shenlong","correo":"shenlong@gmail.com","contrasena":"asd.456","imagen":"img/profile-pics/shenlong.jpg","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
-{"codigoUsuario":25,"nombre":"Picoro","correo":"picoro@gmail.com","contrasena":"asd.456","imagen":"img/profile-pics/picoro.jpg","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}
+{"codigoUsuario":25,"nombre":"Picoro","correo":"picoro@gmail.com","contrasena":"asd.456","imagen":"img/profile-pics/picoro.jpg","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
+{"codigoUsuario":26,"nombre":"Trunks","correo":"trunks@gmail.com","contrasena":"asd.456","imagen":"img/profile-pics/trunks.jpg","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}
 ]

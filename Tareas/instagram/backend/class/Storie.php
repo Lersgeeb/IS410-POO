@@ -1,7 +1,7 @@
 <?php
-  
+  include_once __DIR__ . "/User.php";
 
-    class Storie{
+    class Story{
         private $codigoHistoria;
         private $usuario;
         private $imagenUsuario;
@@ -96,23 +96,23 @@
 
         private static function storiesfilter($stories, $key, $value){
                 $finalStories = [];
-                foreach ($stories as $storie){
-                        if($storie[$key]==$value)
-                                $finalStories[] = $storie;
+                foreach ($stories as $story){
+                        if($story[$key]==$value)
+                                $finalStories[] = $story;
                 }
                 return  $finalStories;
         }
 
-        public static function getStoriebyId($id){
+        public static function getStorybyId($id){
                 $content  = file_get_contents("../data/historias.json");
                 $stories = json_decode($content,true);
 
-                $storieId = Storie::storiesfilter($stories,"codigoHistoria", $id);
+                $storyId = Story::storiesfilter($stories,"codigoHistoria", $id);
 
-                return json_encode($storieId[0]);
+                return json_encode($storyId[0]);
         }
 
-        public static function getStoriebyIndex($index){
+        public static function getStorybyIndex($index){
                 $content  = file_get_contents("../data/historias.json");
                 $stories = json_decode($content,true);
 
@@ -120,13 +120,28 @@
         }
 
 
-        public static function getStoriesbyUser($userName){
+        public static function getStoriebyUserId($userCode){
                 $content  = file_get_contents("../data/historias.json");
                 $stories = json_decode($content,true);
-                $storieUser = Storie::storiesfilter($stories,"usuario", $userName);
+                $storyUser = Story::storiesfilter($stories,"codigoUsuario", $userCode);
 
+                if($storyUser)
+                        return json_encode($storyUser[0]);
+        }
 
-                return json_encode($storieUser);
+        public static function getStoriesbyFollowUsers($id){
+                 
+                $user = json_decode( User::getUser($id), true ); 
+                $following = $user["siguiendo"];
+                $totalStories = [];
+
+                foreach ($following as $followUserId){
+                        $story = json_decode(  Story::getStoriebyUserId($followUserId), true );
+                        if($story)
+                                $totalStories[] = $story;
+                }
+
+                return json_encode($totalStories);
         }
     }
 
