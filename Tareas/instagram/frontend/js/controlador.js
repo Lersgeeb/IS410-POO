@@ -21,6 +21,25 @@ function comentar(codigoPost){
     console.log(`Comentar el post ${codigoPost} con el comentario ${$("#comentario-post-"+codigoPost).val()}`);
 }
 
+
+async function CreatePost(){
+    userCode = document.getElementById('usuario-actual').value;
+    postContent = document.getElementById('contenido-post');
+    img = document.getElementById('url-imagen');
+
+    if(postContent.value && img.value){
+        const posted = await setPost(userCode, postContent.value, img.value);
+        console.log(posted);
+        if(posted) 
+            postContent.value = '';
+            img.value = '';
+            $('#nuevo-post').modal('hide');
+    }
+
+
+
+}
+
 /*AXIOS */
 async function getUsers(){
     url = 'http://localhost/CodigoPOO/Tareas/instagram/backend/api/userApi.php';
@@ -74,6 +93,24 @@ async function getStoriesbyUserId(userId){
         return stories.data;
 }
 
+async function setPost(userCode,postContent,img){
+    url = `http://localhost/CodigoPOO/Tareas/instagram/backend/api/postApi.php`;
+
+    const post =  await axios({
+        method:'POST',
+        url: url, 
+        responsetype:'json',
+        data:{
+            "codigoUsuario":userCode,
+            "contenidoPost":postContent,
+            "imagen":img,
+        }
+    })
+
+    if(post.request.status == 200)
+        return true;
+}
+
 /*------------------------------------------------------------------*/
 
 async function render(){
@@ -89,7 +126,7 @@ async function renderUserScroll(){
 
     if(users){
         actualUser = document.getElementById('usuario-actual');
-
+        actualUser.innerHTML = '';
         for(user of users){
             actualUser.innerHTML += `<option value="${user.codigoUsuario}">${user.nombre}</option>`;
         }

@@ -11,33 +11,15 @@ include_once __DIR__ . "/Comment.php";
         private $imagen;
         private $cantidadLikes;
 
-        public function __construct($codigoPost, $codigoUsuario, $contenidoPost, $imagen, $cantidadLikes){
-            $this->$codigoPost = $codigoPost ;
-            $this->$codigoUsuario = $codigoUsuario ;
-            $this->$contenidoPost = $contenidoPost ;
-            $this->$imagen = $imagen ;
-            $this->$cantidadLikes = $cantidadLikes ;
+        public function __construct($codigoUsuario, $contenidoPost, $imagen, $cantidadLikes){
+            $this->codigoUsuario = $codigoUsuario;
+            $this->contenidoPost = $contenidoPost;
+            $this->imagen = $imagen;
+            $this->cantidadLikes = $cantidadLikes;
+            
         }
 
-        /**
-         * Set the value of codigoPost
-         *
-         * @return  self
-         */ 
-        public function setCodigoPost($codigoPost)
-        {
-                $this->codigoPost = $codigoPost;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of codigoPost
-         */ 
-        public function getCodigoPost()
-        {
-                return $this->codigoPost;
-        }
+   
 
         /**
          * Get the value of codigoUsuario
@@ -189,4 +171,28 @@ include_once __DIR__ . "/Comment.php";
 
                 return json_encode($totalPosts);
         }
+
+        public function createPost(){
+                $content  = file_get_contents("../data/posts.json");
+                $posts = json_decode($content,true);
+
+                $lastPost = end($posts);
+                $newCode = ( (int)$lastPost["codigoPost"] ) + 1;
+
+                $post = array(
+                        "codigoPost" => $newCode,
+                        "codigoUsuario" => $this->codigoUsuario,
+                        "contenidoPost" => $this->contenidoPost,
+                        "imagen" => $this->imagen,
+                        "cantidadLikes"  => $this->cantidadLikes
+                );
+
+                $posts[] = $post;
+                
+                $file = fopen("../data/posts.json","w");
+                fwrite($file, json_encode($posts));
+                fclose($file);
+
+        }
+
     } 

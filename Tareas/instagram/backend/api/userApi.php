@@ -3,7 +3,6 @@
     //echo 'Informacion: ' . file_get_contents('php://input');
     //echo "Metodo HTTP: " . $_SERVER['REQUEST_METHOD']; 
     
-    sleep(1);
     header("Content-Type: application/json");
     include_once("../class/User.php");
 

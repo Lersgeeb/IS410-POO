@@ -4,13 +4,15 @@
 
     switch($_SERVER['REQUEST_METHOD']){
 
-        /*case 'POST': //Guardar
+        case 'POST': //Guardar
+
             $_POST = json_decode(file_get_contents('php://input'),true);
-            $user = new User($_POST["name"],$_POST["lastname"],$_POST["birthday"],$_POST["country"]);
-            $user->saveUser();
-            $resultado["mensaje"] = "Guardar usuario, informacion: " . $user;
+            $post = new Post($_POST["codigoUsuario"],$_POST["contenidoPost"],$_POST["imagen"],0);
+
+            $post->createPost();
+            $resultado["mensaje"] = "Guardar post, informacion: " . $post->getCodigoUsuario();
             echo json_encode($resultado);
-        break;*/
+        break;
 
         case 'GET': //Obtener
             if (isset($_GET['id'])){ //?id=#
@@ -30,14 +32,7 @@
         break;
         
 
-        /*case 'PUT': //Actualizar
-            $_PUT = json_decode(file_get_contents('php://input'),true);
-            $user = new User($_PUT["name"],$_PUT["lastname"],$_PUT["birthday"],$_PUT["country"]);
-            $user->updateUser($_GET['id']);
-            $resultado["mensaje"] =  "Actualizar un usuario con el id: " .$_GET['id'].
-                                    ",  Informacion a actualizar: " . $user;
-            echo json_encode($resultado);
-        break;*/
+ 
 
      
     }
