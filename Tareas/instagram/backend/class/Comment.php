@@ -5,11 +5,10 @@
         private $usuario;
         private $comentario;
 
-        public function __construct($codigoComentario, $codigoPost, $usuario, $comentario){
-            $this->$codigoComentario = $codigoComentario ;
-            $this->$codigoPost = $codigoPost ;
-            $this->$usuario = $usuario ;
-            $this->$comentario = $comentario ;
+        public function __construct($codigoPost, $usuario, $comentario){
+            $this->codigoPost = $codigoPost ;
+            $this->usuario = $usuario ;
+            $this->comentario = $comentario ;
         }
         
         
@@ -99,6 +98,7 @@
                 return $content;
         }
 
+
         private static function commentsfilter($comments, $key, $value){
                 $finalcomments = [];
                 foreach ($comments as $comment){
@@ -135,6 +135,33 @@
                 return json_encode($comments[$index]);
         }
         
+        public function getData(){
+                return array(
+                        "codigoComentario"=>$this->codigoComentario,
+                        "codigoPost"=>$this->codigoPost,
+                        "usuario"=>$this->usuario,
+                        "comentario"=>$this->comentario
+                );
+        }
+        
+        public  function saveComment(){
+                
+                
+                $content  = file_get_contents("../data/comentarios.json");
+                $comments = json_decode($content, true);
+                
+                $lastComment = end($comments);
+                $newCode = ( (int)$lastComment["codigoComentario"] ) + 1;
+                $this->codigoComentario = $newCode;
+
+                
+                $comments[] = $this->getData();
+
+                $file = fopen("../data/comentarios.json","w");
+                fwrite($file, json_encode($comments));
+                fclose($file);
+
+        }
     } 
 
 

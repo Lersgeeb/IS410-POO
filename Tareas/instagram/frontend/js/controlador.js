@@ -17,8 +17,25 @@ function verHistoria(codigoUsuario, codigoHistoria,indiceHistoria){
     }
 }
 
-function comentar(codigoPost){
+async function comentar(codigoPost){
     console.log(`Comentar el post ${codigoPost} con el comentario ${$("#comentario-post-"+codigoPost).val()}`);
+
+    commentContent = document.getElementById(`comentario-post-${codigoPost}`)
+    userCode = document.getElementById('usuario-actual').value;
+    
+    comment = await setComment(codigoPost,userCode,commentContent.value);
+    if(comment){
+        commentSection = document.getElementById(`commentSection${codigoPost}`)
+        commentSection.innerHTML += `   <div>
+                                            <span class="post-user">${comment.usuario}</span>
+                                            <span class="post-content">${comment.comentario}</span>
+                                        </div>`
+
+
+        commentContent.value = "";
+    }
+
+
 }
 
 
@@ -42,7 +59,7 @@ async function CreatePost(){
 
 /*AXIOS */
 async function getUsers(){
-    url = 'http://localhost/CodigoPOO/Tareas/instagram/backend/api/userApi.php';
+    url = '../backend/api/userApi.php';
 
     const users =  await axios({
         method:'GET',
@@ -55,7 +72,7 @@ async function getUsers(){
 }
 
 async function getUserById(id){
-    url = `http://localhost/CodigoPOO/Tareas/instagram/backend/api/userApi.php?id=${id}`;
+    url = `../backend/api/userApi.php?id=${id}`;
 
     const user =  await axios({
         method:'GET',
@@ -68,7 +85,7 @@ async function getUserById(id){
 }
 
 async function getPostsbyUserId(userId){
-    url = `http://localhost/CodigoPOO/Tareas/instagram/backend/api/postApi.php?codigoUsuario=${userId}`;
+    url = `../backend/api/postApi.php?codigoUsuario=${userId}`;
 
     const posts =  await axios({
         method:'GET',
@@ -81,7 +98,7 @@ async function getPostsbyUserId(userId){
 }
 
 async function getStoriesbyUserId(userId){
-    url = `http://localhost/CodigoPOO/Tareas/instagram/backend/api/storieApi.php?codigoUsuario=${userId}`;
+    url = `../backend/api/storieApi.php?codigoUsuario=${userId}`;
 
     const stories =  await axios({
         method:'GET',
@@ -94,7 +111,7 @@ async function getStoriesbyUserId(userId){
 }
 
 async function setPost(userCode,postContent,img){
-    url = `http://localhost/CodigoPOO/Tareas/instagram/backend/api/postApi.php`;
+    url = `../backend/api/postApi.php`;
 
     const post =  await axios({
         method:'POST',
@@ -110,6 +127,25 @@ async function setPost(userCode,postContent,img){
     if(post.request.status == 200)
         return true;
 }
+
+async function setComment(postCode,userCode,commentContent){
+    url = `../backend/api/commentApi.php`;
+
+    const saveComment =  await axios({
+        method:'POST',
+        url: url, 
+        responsetype:'json',
+        data:{
+            "codigoPost":postCode,
+            "usuario":userCode,
+            "comentario":commentContent,
+        }
+    })
+
+    if(saveComment.request.status == 200)
+        return saveComment.data;
+}
+
 
 /*------------------------------------------------------------------*/
 
@@ -161,7 +197,9 @@ function renderPost(post){
                                     <span class="post-content">${post.contenidoPost}</span>
                                     <hr>
                                     <b>Comments</b><br>
-                                        ${commentsRendered.join(" ")}        
+                                        <div id="commentSection${post.codigoPost}">
+                                            ${commentsRendered.join(" ")}        
+                                        </div>
                                     <hr>
                                     <div class="px-0">
                                         <div class="input-group mb-3">
@@ -171,7 +209,7 @@ function renderPost(post){
                                         </div>
                                         </div>
                                     </div>
-                                    </div>
+                                    </>
                                 </div>
                                 </div>
                             </div>`;

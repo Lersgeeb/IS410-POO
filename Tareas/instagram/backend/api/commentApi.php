@@ -2,6 +2,7 @@
     
     header("Content-Type: application/json");
     include_once("../class/Comment.php");
+    include_once("../class/User.php");
 
     switch($_SERVER['REQUEST_METHOD']){
 
@@ -21,5 +22,10 @@
             }
         break;
         
-        
+        case 'POST':
+            $_POST = json_decode(file_get_contents('php://input'),true);
+            $user = json_decode( User::getUser($_POST["usuario"]),true );
+            $comment = new Comment($_POST["codigoPost"], $user["nombre"], $_POST["comentario"]);
+            $comment->saveComment();
+            echo json_encode($comment->getData()) ;
     }

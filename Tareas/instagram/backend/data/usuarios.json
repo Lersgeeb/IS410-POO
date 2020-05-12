@@ -5,7 +5,7 @@
     "correo":"patricio@gmail.com",
     "contrasena":"asd.456",
     "imagen":"img/profile-pics/patricio.jpg",
-    "siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+    "siguiendo":[7,10,11,13,14]
 },
 {"codigoUsuario":2,"nombre":"Vegeta","correo":"vegeta@gmail.com","contrasena":"bcdcb29ed2aab16d48c11485264df665e906bdd9","imagen":"img/profile-pics/vegeta.jpg","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
 {"codigoUsuario":3,"nombre":"16","correo":"16@gmail.com","contrasena":"asd.456","imagen":"img/profile-pics/androide_16.jpg","siguiendo":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
