@@ -1,9 +1,13 @@
+
+/*--------------------------------------Funcionalidades---------------------------------------*/
 var historias= [];
 
-function verHistoria(codigoUsuario, codigoHistoria,indiceHistoria){
+function verHistoria(codigoUsuario, codigoHistoria,indiceHistoria,username){
     console.log(`Ver historia ${codigoHistoria} del usuario ${codigoUsuario} `);
     $('#ver-historia').modal('show');
 
+    LabelModalStories = document.getElementById('LabelModalStories')
+    LabelModalStories.innerHTML = `Viendo Historias de ${username}`;
     storiesUsers = document.getElementById('storiesUsers');
     storiesUsers.innerHTML =``;
     
@@ -38,6 +42,22 @@ async function comentar(codigoPost){
 
 }
 
+function like(codigoPost,likeButton){
+
+    liked = likeButton.getAttribute('liked')
+    if(liked == 0)    {
+        likeButton.setAttribute("liked", "1");
+        likeButton.innerHTML = `<i class="fas fa-heart" style="color:#F7545C;"></i>`
+    }
+    else{
+        likeButton.innerHTML = `<i class="far fa-heart"></i>`
+        likeButton.setAttribute("liked", "0");
+    }
+
+    
+    
+}
+
 
 async function CreatePost(){
     userCode = document.getElementById('usuario-actual').value;
@@ -57,7 +77,7 @@ async function CreatePost(){
 
 }
 
-/*AXIOS */
+/*--------------------------------------AXIOS---------------------------------------*/
 async function getUsers(){
     url = '../backend/api/userApi.php';
 
@@ -147,7 +167,7 @@ async function setComment(postCode,userCode,commentContent){
 }
 
 
-/*------------------------------------------------------------------*/
+/*--------------------------------------RENDER---------------------------------------*/
 
 async function render(){
     //printUsers();
@@ -192,7 +212,7 @@ function renderPost(post){
 
                                     </div>
                                     <div class="px-3 py-3 post">
-                                    <span class="pointer" onclick="like(${post.codigoPost});"><i class="far fa-heart"></i></span>&nbsp;${post.cantidadLikes} Likes<br>
+                                    <span class="pointer" onclick="like(${post.codigoPost},this);" liked=0 ><i class="far fa-heart"></i></span>&nbsp;${post.cantidadLikes} Likes<br>
                                     <span class="post-user">${post.user.nombre}</span>
                                     <span class="post-content">${post.contenidoPost}</span>
                                     <hr>
@@ -245,7 +265,7 @@ async function renderStories(actualUserId){
     countStory = 0;
     for(story of stories){
         historias.push(story.historia);
-        storieSection.innerHTML +=`  <div class="px-1 py-2 story-card pointer" onclick="verHistoria(${story.codigoUsuario},${story.codigoHistoria}, ${countStory++},);">
+        storieSection.innerHTML +=`  <div class="px-1 py-2 story-card pointer" onclick="verHistoria(${story.codigoUsuario},${story.codigoHistoria}, ${countStory++},'${story.usuario}');">
                                         <div class="fl">
                                         <img class="img-fluid img-thumbnail rounded-circle img-thumbnail-historia" src="${story.imagenUsuario}">
                                         </div>  
